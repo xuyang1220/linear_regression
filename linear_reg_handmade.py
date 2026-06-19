@@ -69,11 +69,11 @@ def main():
     rng = np.random.default_rng(0)
 
     # Synthetic data: 5 features on wildly different scales + noise.
-    n, d = 500, 5
-    X = rng.normal(size=(n, d)) * np.array([1.0, 100.0, 0.01, 50.0, 5.0])
-    true_w = np.array([3.0, -1.5, 40.0, 0.2, -7.0])
-    true_b = 12.0
-    y = X @ true_w + true_b + rng.normal(scale=1.0, size=n)
+    n, d = 5000, 10
+    X = rng.normal(size=(n, d)) * np.array([1.0, 100.0, 0.01, 50.0, 5.0, 1.0, 100.0, 0.01, 50.0, 5.0])
+    true_w = np.array([3.0, -1.5, 40.0, 0.2, -7.0, 6.0, -3.5, 40.0, 180, -17.0])
+    true_b = 125.0
+    y = X @ true_w + true_b + rng.normal(scale=100.0, size=n)
     # print(X)
     # print(y)
     fitter = LinearRegression()
